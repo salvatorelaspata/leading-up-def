@@ -1,0 +1,52 @@
+.bg-color{
+    background-color: #26c3a1 !important;
+    padding-top: 15px;
+    padding-bottom:15px;
+}
+
+.container-form{
+    position: fixed;
+    top:0;
+    left: 0;
+    right: 0;    
+}
+
+.input-field{
+    color:white;
+    font-weight: 400;
+    align-self: center;
+}
+
+.form-flex{
+    display: flex;
+    flex-direction: column;
+}
+
+.fixed-bar{
+    border:none;
+}
+.container-form--header{
+    margin-bottom:100px;
+}
+
+.next{
+    width:100%;
+}
+
+.previous{
+    width: 100%;
+}
+
+.intestazione-form{
+    color:white;
+}
+
+@media only screen and (max-width: 600px) {
+    .container-input--mobile{
+        height: 10% !important;
+    }
+
+    .container-text-field--mobile{
+        height: 14% !important;;
+    }
+  }

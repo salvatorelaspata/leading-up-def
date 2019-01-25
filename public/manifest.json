@@ -1,0 +1,14 @@
+{
+  "short_name": "Leading Up - PostBooking",
+  "name": "Leading Up - PostBooking",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "./index.html",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
