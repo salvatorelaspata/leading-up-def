@@ -7,9 +7,16 @@ const validate = values => {
     /* errors.startDate = 'Required' */
   } 
   if(!values.emailField){
-    errors.emailField = 'Required'
+    errors.emailField = 'Required';
   }
   /**end - LOGIN**/
+
+  /**start - STEP1**/
+  if (!values.telephone) {
+    errors.telephone = 'Required';
+  }
+  /**start - STEP1**/
+  
   if (!values.firstName) {
     errors.firstName = 'Required';
   }
