@@ -3,37 +3,32 @@ import { Field, reduxForm } from 'redux-form';
 import validate from './validate';
 import renderField from './renderField';
 
-const renderError = ({ meta: { touched, error } }) =>
-  touched && error ? <span>{error}</span> : false;
-
 const WizardFormSecondPage = props => {
   const { handleSubmit, previousPage } = props;
   return (
-    <form onSubmit={handleSubmit}>
-      <Field name="email" type="email" component={renderField} label="Email" />
+    <div>
       <div>
-        <label>Sex</label>
-        <div>
-          <label>
-            <Field name="sex" component="input" type="radio" value="male" />
-            {' '}
-            Male
-          </label>
-          <label>
-            <Field name="sex" component="input" type="radio" value="female" />
-            {' '}
-            Female
-          </label>
-          <Field name="sex" component={renderError} />
+        <div className="intestazione-form">
+          <h4>
+            Step1: Addictional Information
+          </h4>
+          <p>To facilitate your check in we need the follow Information</p>
+          
         </div>
       </div>
-      <div>
-        <button type="button" className="previous" onClick={previousPage}>
-          Previous
-        </button>
-        <button type="submit" className="next">Next</button>
-      </div>
-    </form>
+    
+      <form onSubmit={handleSubmit} className="form-flex" autoComplete="off">
+        
+        <Field name="telephone" type="tel" component={renderField} label="Telephone" />
+
+        <div>
+          <button type="button" className="previous" onClick={previousPage}>
+            Previous
+          </button>
+          <button type="submit" className="next">Next</button>
+        </div>
+      </form>
+    </div>
   );
 };
 

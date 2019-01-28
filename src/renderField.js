@@ -10,6 +10,7 @@ const renderField = ({ input, label, type, meta: { touched, error } }) => (
           id={label}
           {...input}
           margin="normal"
+          type={type}
         />
       
     </div>
