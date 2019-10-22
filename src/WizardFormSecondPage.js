@@ -13,7 +13,6 @@ const WizardFormSecondPage = props => {
             Step1: Addictional Information
           </h4>
           <p>To facilitate your check in we need the follow Information</p>
-          
         </div>
       </div>
     

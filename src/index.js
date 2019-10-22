@@ -8,6 +8,8 @@ import WizardForm from './WizardForm';
 
 const rootEl = document.getElementById('root');
 
+require('./styles/main.scss')
+
 ReactDOM.render(
   <Provider store={store}>
     <div className='container container-form'>

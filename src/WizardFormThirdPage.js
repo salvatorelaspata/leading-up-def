@@ -1,50 +1,47 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import validate from './validate';
-const colors = ['Red', 'Orange', 'Yellow', 'Green', 'Blue', 'Indigo', 'Violet'];
+import Index from './component/Card/Index';
+import renderFieldRadio from './component/Card/Index';
 
-const renderColorSelector = ({ input, meta: { touched, error } }) => (
-  <div>
-    <select {...input}>
-      <option value="">Select a color...</option>
-      {colors.map(val => <option value={val} key={val}>{val}</option>)}
-    </select>
-    {touched && error && <span>{error}</span>}
-  </div>
-);
+var teams = [{
+  title: "Flight",
+  img: "./img/flight.jpg"
+}, {
+  title: "Train",
+  img: "./img/train.jpg"
+}, {
+  title: "Car",
+  img: "./img/car.jpg"
+}];
 
 const WizardFormThirdPage = props => {
   const { handleSubmit, pristine, previousPage, submitting } = props;
+  //const renderFieldRadio = (input) => (<Index title="Pick a team" cardContents={teams}/>);
   return (
-    <form onSubmit={handleSubmit}>
+    
+    <div>
       <div>
-        <label>Favorite Color</label>
-        <Field name="favoriteColor" component={renderColorSelector} />
-      </div>
-      <div>
-        <label htmlFor="employed">Employed</label>
-        <div>
-          <Field
-            name="employed"
-            id="employed"
-            component="input"
-            type="checkbox"
-          />
+        <div className="intestazione-form">
+          <h4>
+            Step2: Transport Information
+          </h4>
+          <p>To calculate the effective time of your arrival at the appartment we also need to know the type of trasportation you will use to get there:</p>
         </div>
       </div>
-      <div>
-        <label>Notes</label>
+    
+      <form onSubmit={handleSubmit} className="form-flex" autoComplete="off">
+        <Field name="mezzo" component={renderFieldRadio} />
+      
+
         <div>
-          <Field name="notes" component="textarea" placeholder="Notes" />
+          <button type="button" className="previous" onClick={previousPage}>
+            Previous
+          </button>
+          <button type="submit" className="next">Next</button>
         </div>
-      </div>
-      <div>
-        <button type="button" className="previous" onClick={previousPage}>
-          Previous
-        </button>
-        <button type="submit" disabled={pristine || submitting}>Submit</button>
-      </div>
-    </form>
+      </form>
+    </div>
   );
 };
 export default reduxForm({

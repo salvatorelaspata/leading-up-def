@@ -10,6 +10,7 @@
     "date-fns": "^2.0.0-alpha.25",
     "material-ui-pickers": "^2.1.1",
     "moment": "^2.24.0",
+    "node-sass": "^4.11.0",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-redux": "^6.0.0",
